@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maantra Alarm Privacy Policy</title>
+<meta name="description" content="Privacy policy for the Maantra Alarm Android app (ashwar.maantraalarm).">
+<style>
+  :root { --bg:#ffffff; --text:#1d2329; --muted:#5b6670; --line:#e3e7ea; --accent:#8a4b08; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#121417; --text:#e7eaed; --muted:#9aa5ae; --line:#2a3036; --accent:#f0b26b; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:1.8rem; margin:0 0 4px; }
+  h2 { font-size:1.15rem; margin:32px 0 8px; padding-top:16px; border-top:1px solid var(--line); }
+  .meta { color:var(--muted); margin:0 0 24px; }
+  a { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:.95rem; }
+  th, td { text-align:left; vertical-align:top; padding:8px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; }
+</style>
+</head>
+<body>
+<main>
+<h1>Maantra Alarm Privacy Policy</h1>
+<p class="meta">App: Maantra Alarm (Android, package <code>ashwar.maantraalarm</code>) · Developer: Ashwar Sadh · Last updated 1 November 2026</p>
+
+<p>Maantra Alarm rings a daily alarm at the right time for your maantra, worked out from the sunset time where you are. To do that it needs to know roughly where you are. This policy explains what the app uses, where that information goes, and how to remove it.</p>
+<p>In short: the app has no accounts, no ads, no analytics and no tracking. Your location and settings stay on your phone. We (the developer) do not run a server that receives your location, and we never sell or share your information.</p>
+
+<h2>1. Your location</h2>
+<p>The app asks for <strong>approximate location</strong> (Android's "coarse" location, city-level) and only <strong>while the app or its alarm screen is in use</strong>. It does not ask for precise location or "Allow all the time".</p>
+<ul>
+  <li><strong>Why:</strong> to calculate today's sunset time for your place, and to move the alarm when you travel.</li>
+  <li><strong>How:</strong> through Google Play services' location provider on your phone.</li>
+  <li><strong>Where it is kept:</strong> the latest position (latitude, longitude and city name) is saved only in the app's private storage on your phone. It is not sent to the developer.</li>
+</ul>
+<p>To show a city name for a position, the app uses Android's built-in Geocoder, which may be provided by Google on your device.</p>
+
+<h2>2. IP-based location (when the phone gives no location)</h2>
+<p>When Android gives the app no location, for example after a restart or while the app is closed, the app can look up an approximate city from your internet connection instead. It sends a request over an encrypted (HTTPS) connection to:</p>
+<ul>
+  <li><a href="https://ipwho.is/">ipwho.is</a>, and if that fails, <a href="https://ipapi.co/">ipapi.co</a>.</li>
+</ul>
+<p>Like any website you open, these services see your device's <strong>public IP address</strong> when the request arrives. They reply with an approximate latitude, longitude and city, which is saved on your phone as above. The app sends them nothing else: no name, no identifiers, no settings. Their handling of the request is governed by their own policies: <a href="https://ipwhois.io/privacy">ipwho.is (ipwhois.io) privacy</a> and <a href="https://ipapi.co/privacy/">ipapi.co privacy</a>.</p>
+
+<h2>3. City search</h2>
+<p>If you type a city name to set your place by hand, that text is sent over HTTPS to <a href="https://nominatim.openstreetmap.org/">OpenStreetMap Nominatim</a> to find matching places. Only the text you typed is sent. See the <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation privacy policy</a>.</p>
+
+<h2>4. Alarm re-set messages (Firebase Cloud Messaging)</h2>
+<p>Some phones' battery savers cancel alarms. To put a cancelled alarm back, the app uses <strong>Google Firebase Cloud Messaging (FCM)</strong>. On first start it subscribes to one shared topic, and once a day the same short "check your alarm" message is sent to everyone on that topic. When it arrives, the app checks its alarm on the phone and sets it again if needed.</p>
+<ul>
+  <li>To deliver these messages, Firebase creates an <strong>FCM registration token</strong> (a device identifier for this app) that is held by Google.</li>
+  <li>The developer does not receive or store your token, and messages are never addressed to you individually. They carry no personal information.</li>
+  <li>See <a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a>.</li>
+</ul>
+
+<h2>5. What is stored and where</h2>
+<table>
+  <tr><th>Information</th><th>Where it is kept</th><th>Shared with</th></tr>
+  <tr><td>Approximate position and city, alarm settings, language</td><td>Only on your phone, in the app's private storage</td><td>No one</td></tr>
+  <tr><td>Public IP address (only during an IP lookup)</td><td>Not stored by the app</td><td>ipwho.is or ipapi.co, to answer the lookup</td></tr>
+  <tr><td>City name you type in search</td><td>Not stored after the search</td><td>OpenStreetMap Nominatim, to answer the search</td></tr>
+  <tr><td>FCM registration token</td><td>Google Firebase</td><td>Google, to deliver the daily alarm re-set message</td></tr>
+</table>
+<p>If Android backup is turned on for your Google account, Android may include the app's settings in your device backup. That backup is handled by Google under your account.</p>
+<p>All network traffic from the app uses encrypted HTTPS connections.</p>
+<p>The app also uses Google Play's in-app update service to tell you when a new version is available. This is handled by Google Play on your phone.</p>
+
+<h2>6. What the app does not do</h2>
+<ul>
+  <li>No account, sign-in, name, email address or phone number is collected.</li>
+  <li>No advertising, no analytics or crash-reporting SDKs, no tracking across apps or websites.</li>
+  <li>No contacts, photos, files, microphone or precise location are accessed.</li>
+  <li>Information is never sold.</li>
+</ul>
+
+<h2>7. Deleting your information</h2>
+<ul>
+  <li>Your saved position and settings: clear the app's storage (Settings → Apps → Maantra Alarm → Storage → Clear data) or uninstall the app. Both delete everything the app keeps on your phone.</li>
+  <li>The FCM token: uninstalling the app or clearing its data stops it, and Google discards unused tokens.</li>
+  <li>To stop location use at any time, turn off the app's location permission in Android settings and pick your city by hand.</li>
+</ul>
+<p>Because the developer holds no copy of your data, there is nothing on our side to delete. You can still write to us with any request.</p>
+
+<h2>8. Children</h2>
+<p>The app is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+<h2>9. Changes</h2>
+<p>If the app's handling of information changes, this page will be updated and the date at the top will change.</p>
+
+<h2>10. Contact</h2>
+<p>Ashwar Sadh, New Delhi, India · <a href="mailto:ashwarsadh@gmail.com">ashwarsadh@gmail.com</a></p>
+</main>
+</body>
+</html>
